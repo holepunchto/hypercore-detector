@@ -1,5 +1,4 @@
 const Hyperbee = require('hyperbee')
-const safetyCatch = require('safety-catch')
 
 const CORE_TYPE = 'core'
 const BEE_TYPE = 'bee'
@@ -11,7 +10,6 @@ async function detect (hypercore, { wait = false } = {}) {
   try {
     isBee = await Hyperbee.isHyperbee(hypercore, { wait })
   } catch (e) { // Could not load first block (~only when wait=false set)
-    safetyCatch(e)
     return UNKNOWN_TYPE
   }
 
