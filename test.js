@@ -49,13 +49,12 @@ test('waits for the first block if wait set (hyperdrive)', async (t) => {
 })
 
 test('can detect a hyperbee', async (t) => {
-  t.plan(1)
-
   const core = new Hypercore(RAM)
   const bee = new Hyperbee(core)
   await bee.put('Needs an entry', 'to officially be a hyperbee')
 
   t.is(await detect(core), 'bee')
+  t.ok(core.closing == null, 'passed-in core not closed')
 })
 
 test('can detect a hyperdrive', async (t) => {

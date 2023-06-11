@@ -17,8 +17,11 @@ async function detect (hypercore, { wait = false } = {}) {
 
   if (!isBee) return CORE_TYPE
 
-  const bee = new Hyperbee(hypercore)
-  if (await isHyperdriveDb(bee)) {
+  const bee = new Hyperbee(hypercore.session())
+  const isDrive = await isHyperdriveDb(bee)
+  await bee.close()
+
+  if (isDrive) {
     return DRIVE_TYPE
   } else {
     return BEE_TYPE
