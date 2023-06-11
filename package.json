@@ -28,7 +28,6 @@
     "standard": "^17.1.0"
   },
   "dependencies": {
-    "hyperbee": "^2.13.0",
-    "safety-catch": "^1.0.2"
+    "hyperbee": "^2.13.0"
   }
 }
