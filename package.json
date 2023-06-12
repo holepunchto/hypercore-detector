@@ -1,6 +1,6 @@
 {
   "name": "hypercore-detector",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Detect the type of a Hypercore",
   "main": "index.js",
   "scripts": {
